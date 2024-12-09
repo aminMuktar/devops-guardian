@@ -5,7 +5,7 @@ import { BlogPostCard } from "@/components/blog/blog-post-card";
 
 export default function Blog(){
     return (
-        <div className="mx-auto flex max-w-7xl items-center justify-between p-6">
+        <div className="mx-auto flex items-center justify-between p-6">
 
             <div className="py-36 w-full h-full flex flex-col justify-center items-center overflow-hidden">
             <div className="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">

@@ -8,15 +8,13 @@ import { LogoTicker } from "@/components/logo-ticker";
 export default function Home() {
   return (
     <>
-    <div className="mx-auto flex max-w-7xl items-center justify-between p-6">
-      <Hero />
-    </div>
-    <div className="overflow-x-hidden max-w-7xl">
+    <div className="container mx-auto flex flex-col gap-5">
+        <Hero />
         <LogoTicker />
         <DesignFeature />
         <Feature />
         <CallToAction />
-      </div>
+    </div>
     </>
   );
 }

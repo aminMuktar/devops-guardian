@@ -6,7 +6,7 @@ export const Hero:FC = () =>{
   return (
     <>
     
-        <div className="py-10 w-full h-full flex flex-col justify-center items-center overflow-hidden ">
+        <div className="mt-12 w-full h-full flex flex-col justify-center items-center overflow-hidden ">
             <div className="pt-10 sm:pt-10 lg:pt-30 w-full flex flex-col lg:flex-row">
                 <div className="w-full lg:w-1/2 flex flex-col justify-center">
                     <div className="p-5 flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
