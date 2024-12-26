@@ -45,15 +45,6 @@ export const LoginForm:FC =()=>{
     return (
         <>
             <form onSubmit={onSubmit}>
-            {error && (
-                <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                <strong className="font-bold">Holy smokes!</strong>
-                <span className="block sm:inline">{error}</span>
-                <span className="absolute top-0 bottom-0 right-0 px-4 py-3">
-                </span>
-              </div>
-            )}
-
             <div className="flex flex-col items-center justify-center min-h-screen px-2 py-6 mx-auto md:h-screen lg:py-0">
                 <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
                     <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -69,7 +60,7 @@ export const LoginForm:FC =()=>{
                                     value={formValue.email}
                                     onChange={handleChange}
                                     placeholder="user@mail.com"
-                                    className="bg-gray-700 border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5 placeholder-gray-400 text-white " />
+                                    className="bg-gray-700 border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5 placeholder-gray-400 text-white focus:outline-none" />
                             </div>
                             <div>
                                 <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
@@ -79,8 +70,15 @@ export const LoginForm:FC =()=>{
                                 value={formValue.password}
                                 onChange={handleChange}
                                 placeholder="••••••••"
-                                className="bg-gray-700 border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5 placeholder-gray-400 text-white " />
+                                className="bg-gray-700 border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5 placeholder-gray-400 text-white focus:outline-none" />
                             </div>
+                            {error && (
+                                <div className="bg-zinc-900 bg-opacity-50 backdrop-blur-lg text-red-500 px-4 py-3 rounded relative" role="alert">
+                                <span className="block sm:inline">{error}</span>
+                                <span className="absolute top-0 bottom-0 right-0 px-4 py-3">
+                                </span>
+                            </div>
+                            )}
                             <button type="submit" className="w-full text-background bg-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                             {loading ? "loading..." : "Login" }
                             </button>

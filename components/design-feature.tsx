@@ -2,7 +2,7 @@
 import { FC } from "react";
 import Image from 'next/image';
 import {motion , useScroll, useTransform} from 'framer-motion';
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 export const DesignFeature:FC =()=>{
     const appImage = useRef<HTMLImageElement>(null);
@@ -15,10 +15,10 @@ export const DesignFeature:FC =()=>{
     const opacity = useTransform(scrollYProgress, [0, 1], [.3,1]);
     return (
         <>
-        <div className="py-[72px] sm:py-24">
+        <div className="z- py-[72px] sm:py-24 mx-auto flex max-w-7xl items-center">
       <div className="container">
         <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl text-center">
-          <span className="block text-transparent leading-snug bg-clip-text bg-gradient-to-r from-slate-500 via-slate-300 to-slate-100">
+          <span className="block text-transparent leading-snug bg-clip-text bg-gradient-to-r from-slate-500 via-slate-300 to-slate-100 px-4">
             We Do the Coding, You Do the Winning
           </span>
         </h2>
@@ -33,7 +33,7 @@ export const DesignFeature:FC =()=>{
 
         }}
         >
-        <Image src="/images/Transaksi.svg" width={800} height={700} ref={appImage} alt="app screen" className="mt-14" />
+        <Image src="/images/Transaksi.svg" width={800} height={700} ref={appImage} alt="app screen" className="px-8 mt-14" />
         </motion.div>
         </div>
 
