@@ -4,17 +4,26 @@ import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { NextAuthProvider } from "./providers";
+import { Toaster } from "react-hot-toast";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+// const geistSans = localFont({
+//   src: "./fonts/GeistVF.woff",
+//   variable: "--font-geist-sans",
+//   weight: "100 900",
+// });
+// const geistMono = localFont({
+//   src: "./fonts/GeistMonoVF.woff",
+//   variable: "--font-geist-mono",
+//   weight: "100 900",
+// });
+
+export const cubano = localFont({
+  src: '/fonts/Cubano.ttf',
+  display: 'swap', // Optional: Use 'swap' to ensure the text is visible while the font loads
+  variable: '--font-cubano', // Optional: Define a CSS variable for the font
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+
+
 
 export const metadata: Metadata = {
   title: "DevOps Guardian",
@@ -34,13 +43,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${cubano.variable} antialiased`}
       >
-        <NextAuthProvider>
-          <Header />
-            {children}
-          <Footer />
-        </NextAuthProvider>
+        <div style={{ fontFamily: 'var(--font-cubano)' }}>        
+          <NextAuthProvider>
+            <Header />
+            <Toaster
+              position="top-center"
+              reverseOrder={false}
+            />
+              {children}
+            <Footer />
+          </NextAuthProvider>
+          </div>
       </body>
     </html>
   );
