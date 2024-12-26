@@ -1,10 +1,4 @@
 import Image from "next/image";
-import PlanetImg from "/images/planet.png";
-import PlanetOverlayImg from "/images/planet-overlay.svg";
-import PlanetTagImg01 from "/images/planet-tag-01.png";
-import PlanetTagImg02 from "/images/planet-tag-02.png";
-import PlanetTagImg03 from "/images/planet-tag-03.png";
-import PlanetTagImg04 from "/images/planet-tag-04.png";
 import type { FC } from "react";
 
 export const FeaturesPlanet:FC = ()=> {
