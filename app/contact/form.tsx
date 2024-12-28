@@ -52,7 +52,7 @@ export const ContactForm:FC = () =>{
                     className="w-full rounded-md py-3 px-4 bg-transparent border text-gray-200 text-sm focus:outline-none focus:border-blue-500 focus:bg-transparent"></textarea>
                 <button type='submit'
                     disabled={isSubmitting}
-                    className="text-white bg-gradient-to-r from-orange-700 via-orange-400 to-yellow-500 text-background tracking-wide rounded-md text-sm px-4 py-3 w-full !mt-6">{isSubmitting ? "sending...." : "Send"}</button>
+                    className="bg-gradient-to-r from-orange-700 via-orange-400 to-yellow-500 text-background tracking-wide rounded-md text-sm px-4 py-3 w-full !mt-6">{isSubmitting ? "sending...." : "Send"}</button>
             </form>
         </>
     );

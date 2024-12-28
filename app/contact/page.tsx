@@ -11,7 +11,7 @@ export default function Contact(){
             <div>
                 <h1 className="text-white text-3xl font-extrabold">{"Let's Talk"}</h1>
                 <p className="text-sm text-gray-200 mt-4">{"Have some big idea or brand to develop and need help? Then reach out we'd love to hear about your project  and provide help."}</p>
-
+                <p className="text-sm text-red-500 mt-4">{"Please don't scam us!!!"}</p>
                 <div className="mt-12">
                     <h2 className="text-gray-200 text-base font-bold">Email</h2>
                     <ul className="mt-4">

@@ -19,15 +19,7 @@ export const ServiceHero: FC = () => {
                 </a>  
             </div>
             <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
-                <iframe
-                    width="700"
-                    height="350"
-                    src="https://www.youtube.com/embed/o_Ahgu1-zj4"
-                    title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="w-2/3 lg:w-full rounded-xl"
-                ></iframe>
+                <img className="rounded-lg w-full h-full" src="/images/hero-service.jpeg" alt="" />
             </div>                
         </div>
     </section>
