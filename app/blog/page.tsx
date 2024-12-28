@@ -20,11 +20,20 @@ export default function Blog(){
     const [pageSize] = useState(9); 
     const [totalPages, setTotalPages] = useState(0);
     const fetchPublishedBlogs = async () => {
+      try{
         const res = await fetch(`/api/posts?page=${page}&pageSize=${pageSize}`);
+        if(!res.ok){
+          throw new Error("Failed to fetch blogs");
+        }
         const data = await res.json();
-    
-        setBlogs(data.posts);
-        setTotalPages(data.pagination.totalPages);
+
+        setBlogs(data.posts || []);
+        setTotalPages(data.pagination?.totalPages || 1);
+      }
+      catch(error){
+        console.error("Error fetching blogs:", error);
+      }
+        
       };
       
       useEffect(() => {
@@ -49,14 +58,19 @@ export default function Blog(){
                 <p className="font-light text-gray-300 ">Welcome to the Devops Guardian blog! Discover all the latest resources to take your Tech skill strategy to the next level.</p>
             </div> 
             <div className="grid gap-4 lg:grid-cols-3 md:grid-cols-2">
-            {blogs.map((blog) => (
-                <>
-                <BlogPostCard key={blog.id} id={blog.id} title={blog.title} category={blog.category} subTitle={blog.subTitle} />
-                
-                </>
-                
-
-                ))}
+            {blogs.length > 0 ? (
+              blogs.map((blog) => (
+                <BlogPostCard
+                  key={blog.id}
+                  id={blog.id}
+                  title={blog.title}
+                  category={blog.category}
+                  subTitle={blog.subTitle}
+                />
+              ))
+            ) : (
+              <p className="text-gray-500">No blogs found.</p>
+            )}
             </div>
             </div>
         </div>

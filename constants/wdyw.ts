@@ -11,7 +11,7 @@ export const what_do_you_want =[
         title: "Backend solutions"
     },
     {
-        img_path: "/images/aws.png",
+        img_path: "/images/awslogo.png",
         title: "Cloud service"
     },
     {

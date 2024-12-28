@@ -5,6 +5,10 @@ import rehypeRaw from 'rehype-raw';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import Head from "next/head";
+
+
+
 
 type Blog = {
   id: string;
@@ -23,7 +27,7 @@ export default async function BlogDetail({ params }: { params: { id: string } })
     where: { id },
   });
     
-
+  
   if (!blog) {
     return (
       <div className="max-w-screen-md mx-auto py-10">
@@ -36,7 +40,7 @@ export default async function BlogDetail({ params }: { params: { id: string } })
   return (
       <>
       {/* Meta tags for SEO */}
-      <head>
+      <Head>
         <title>{`${blog.title} | DevOps Guardian Blog`}</title>
         <meta name="description" content={blog.subTitle} />
         <meta name="keywords" content={categories.join(", ")} />
@@ -48,15 +52,12 @@ export default async function BlogDetail({ params }: { params: { id: string } })
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={blog.title} />
         <meta name="twitter:description" content={blog.subTitle} />
-      </head>
+      </Head>
       
-        <div className="max-w-screen-md mx-auto py-36">
+        <div className="max-w-screen-md mx-auto py-36 px-8">
             <div className="mb-12">
-              <div className="flex justify-between gap-5">
+              <div className="flex gap-5">
                 <h1 className="text-4xl font-extrabold mb-5">{blog.title}</h1>
-                <p className="text-sm text-gray-500">
-                    Published on {new Date(blog.createdAt).toLocaleDateString()}
-                </p>
               </div>
               <div className="flex flex-col gap-5">
                 <h2 className="text-xl font-semibold text-gray-300 ">{blog.subTitle}</h2>
@@ -96,7 +97,9 @@ export default async function BlogDetail({ params }: { params: { id: string } })
                   {blog.content}
                 </ReactMarkdown>
             </div>
-                
+            <p className="pt-16 text-sm text-gray-500">
+              Published on {new Date(blog.createdAt).toISOString().split('T')[0]}
+            </p>
     </div>
     </>
   );
