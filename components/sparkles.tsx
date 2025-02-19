@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 'use client'
 
@@ -20,7 +21,7 @@ interface SparklesProps {
   mousemove?: boolean
   hover?: boolean
   background?: string
-  options?: Record<string, any> // Adjust type as needed based on `options` structure
+  // options?: Record<string, any> // Adjust type as needed based on `options` structure
 }
 
 export function Sparkles({
@@ -38,7 +39,7 @@ export function Sparkles({
   mousemove = false,
   hover = false,
   background = 'transparent',
-  options = {},
+  // options = {},
 }: SparklesProps) {
   const [isReady, setIsReady] = useState(false)
 

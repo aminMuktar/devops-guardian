@@ -5,17 +5,17 @@ import Image from "next/image";
 export const Hero:FC = () =>{
   return (
     <>
-    
-        <div className="mt-12 w-full h-full flex flex-col justify-center items-center overflow-hidden ">
+    <div className="mx-auto flex max-w-7xl items-center justify-between">
+        <div className="mt-12 sm:mt-24 overflow-hidden ">
             <div className="pt-10 sm:pt-10 lg:pt-30 w-full flex flex-col lg:flex-row">
                 <div className="w-full lg:w-1/2 flex flex-col justify-center">
                     <div className="p-5 flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
                         <h1 className="col-start-1 row-start-2 mt-4 max-w-[36rem] text-4xl font-extrabold tracking-tight sm:text-7xl xl:max-w-[43.5rem]">
-                        <span className="block text-transparent leading-snug bg-clip-text bg-gradient-to-r from-slate-500 via-slate-300 to-slate-100">
+                        <span className="block text-transparent leading-snug bg-clip-text bg-gradient-to-r from-orange-500 via-yellow-300 to-yellow-200">
                             Building Bridges Between Vision and Reality
                         </span>
                         </h1>
-                        <p className="col-start-1 row-start-3 mt-4 max-w-lg text-lg text-slate-300">Your Partner in SaaS Development and DevOps</p>
+                        <p className="col-start-1 row-start-3 mt-4 max-w-lg text-lg text-slate-300">Your Partner in SaaS Development and DevOps service</p>
                     </div>
                 </div>
                 <div className="w-full lg:w-1/2 flex flex-col justify-center items-center overflow-hidden">
@@ -23,6 +23,7 @@ export const Hero:FC = () =>{
                 </div>
             </div>
         </div>    
+        </div>
     </>
   );
 }
